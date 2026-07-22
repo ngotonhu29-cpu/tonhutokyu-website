@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The TEN | Tố Như — Becamex Tokyu</title>
+<meta name="description" content="The TEN — 300 căn hộ cao cấp trong quần thể MIDORI PARK, Onsen chuẩn Nhật đầu tiên tại khu vực. A New Dawn of Living. Tư vấn trực tiếp cùng Tố Như.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F2EA; --paper-deep:#ECE5D4;
+    --forest:#12332B; --forest-2:#1B463A; --forest-3:#0C221C;
+    --bronze:#B4874A; --bronze-light:#D8B87E; --terracotta:#B0603F;
+    --ink:#1C2119; --ink-soft:rgba(28,33,25,0.62); --ink-faint:rgba(28,33,25,0.38);
+    --line:rgba(18,51,43,0.14);
+    --on-forest:rgba(245,242,234,0.82); --on-forest-soft:rgba(245,242,234,0.55);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:'Be Vietnam Pro',sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Cormorant',serif;font-weight:500;letter-spacing:0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--bronze);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){ *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;} html{scroll-behavior:auto;} }
+
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(18,51,43,0.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(216,184,126,0.18);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 32px;max-width:1180px;margin:0 auto;}
+  .back-link{display:flex;align-items:center;gap:8px;color:var(--on-forest);font-size:13px;letter-spacing:0.03em;flex:0 0 auto;}
+  .back-link:hover{color:var(--bronze-light);}
+  nav.links{display:flex;gap:26px;}
+  nav.links a{color:var(--on-forest);font-size:12.5px;letter-spacing:0.09em;text-transform:uppercase;position:relative;padding-bottom:4px;white-space:nowrap;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--bronze-light);transition:width .3s ease;}
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{display:flex;align-items:center;gap:8px;background:var(--bronze-light);color:var(--forest-3);padding:9px 16px;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;border-radius:2px;white-space:nowrap;transition:background .3s ease;}
+  .nav-cta:hover{background:#EAD09B;}
+  .nav-toggle{display:none;background:none;border:none;color:var(--paper);font-size:22px;cursor:pointer;flex:0 0 auto;}
+  @media(max-width:900px){
+    nav.links{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;background:var(--forest-3);border-bottom:1px solid rgba(216,184,126,0.18);max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    nav.links.is-open{max-height:400px;}
+    nav.links a{padding:15px 32px;border-top:1px solid rgba(216,184,126,0.1);}
+    .nav-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  .hero{position:relative;min-height:82vh;display:flex;align-items:flex-end;color:var(--on-forest);overflow:hidden;}
+  .hero img.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(12,34,28,0.15) 0%, rgba(12,34,28,0.55) 55%, rgba(12,34,28,0.94) 100%);}
+  .hero-inner{position:relative;z-index:2;padding:168px 0 64px;width:100%;}
+  .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;color:var(--bronze-light);font-size:12.5px;letter-spacing:0.22em;text-transform:uppercase;}
+  .eyebrow .dash{width:34px;height:1px;background:var(--bronze-light);}
+  .hero h1{font-size:clamp(48px,7.4vw,88px);color:var(--paper);line-height:0.98;letter-spacing:-0.005em;max-width:820px;}
+  .hero-tagline{margin-top:22px;max-width:600px;font-family:'Cormorant',serif;font-style:italic;font-weight:500;font-size:22px;color:var(--paper);line-height:1.5;}
+  .hero-sub{margin-top:18px;max-width:640px;font-size:16px;color:var(--on-forest);}
+  .stat-chips{display:flex;flex-wrap:wrap;gap:1px;background:rgba(216,184,126,0.18);margin-top:38px;border:1px solid rgba(216,184,126,0.18);border-radius:3px;overflow:hidden;}
+  .stat-chip{flex:1 1 150px;background:rgba(12,34,28,0.72);padding:16px 20px;}
+  .stat-chip .fv{font-family:'Cormorant',serif;font-size:21px;color:var(--paper);white-space:nowrap;}
+  .stat-chip .fl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--on-forest-soft);margin-top:5px;}
+  .hero-scroll{margin-top:40px;display:flex;align-items:center;gap:10px;color:var(--on-forest-soft);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;}
+  .hero-scroll .stem{width:26px;height:1px;background:var(--bronze-light);}
+
+  .section{padding:100px 0;}
+  .section.tight{padding:80px 0;}
+  .head{max-width:660px;margin-bottom:52px;}
+  .head .kicker{display:flex;align-items:center;flex-wrap:wrap;row-gap:6px;gap:12px;color:var(--forest-2);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:18px;}
+  .head .kicker .dash{width:34px;height:1px;background:var(--bronze);flex:0 0 auto;}
+  .head .kicker .chapter-num{font-family:'JetBrains Mono',monospace;color:var(--bronze);}
+  .head h2{font-size:clamp(28px,3.8vw,42px);color:var(--forest-3);}
+  .head p{margin-top:16px;color:var(--ink-soft);font-size:15.5px;max-width:560px;}
+  .section.on-forest{background:var(--forest);color:var(--on-forest);}
+  .section.on-forest .head .kicker,
+  .section.on-forest .head .kicker .chapter-num{color:var(--bronze-light);}
+  .section.on-forest .head .kicker .dash{background:var(--bronze-light);}
+  .section.on-forest .head h2{color:var(--paper);}
+  .section.on-forest .head p{color:var(--on-forest-soft);}
+  .section.deep{background:var(--forest-3);color:var(--on-forest);}
+  .section.deep .head .kicker,
+  .section.deep .head .kicker .chapter-num{color:var(--bronze-light);}
+  .section.deep .head .kicker .dash{background:var(--bronze-light);}
+  .section.deep .head h2{color:var(--paper);}
+  .section.deep .head p{color:var(--on-forest-soft);}
+
+  .prose p{color:var(--ink-soft);font-size:16px;margin-bottom:16px;max-width:640px;}
+  .prose.on-dark p{color:var(--on-forest);}
+  .prose p.lead{font-family:'Cormorant',serif;font-size:23px;color:var(--forest-3);font-weight:500;line-height:1.5;margin-bottom:20px;}
+  .prose.on-dark p.lead{color:var(--paper);}
+
+  .two-col{display:grid;grid-template-columns:0.95fr 1.05fr;gap:60px;align-items:start;}
+  @media(max-width:900px){.two-col{grid-template-columns:1fr;gap:40px;}}
+
+  .photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .photo-grid .ph{position:relative;overflow:hidden;border-radius:3px;border:1px solid rgba(216,184,126,0.18);}
+  .photo-grid .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .photo-grid .ph:hover img{transform:scale(1.04);}
+  .photo-grid .ph.tall{grid-row:span 2;aspect-ratio:3/4;}
+  .photo-grid .ph.wide{aspect-ratio:4/3;}
+  .photo-grid .ph .cap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(0deg, rgba(12,34,28,0.86), transparent);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:rgba(245,242,234,0.75);}
+
+  .feature-cols{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media(max-width:760px){.feature-cols{grid-template-columns:1fr;}}
+  .feature-col{background:var(--paper);padding:36px 32px;}
+  .feature-col .ac-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:6px;}
+  .feature-col h3{font-size:22px;color:var(--forest-3);margin-bottom:16px;}
+  .feature-col p{font-size:14.5px;color:var(--ink-soft);}
+
+  .map-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+  .map-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .map-item .mk{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--bronze);flex:0 0 auto;padding-top:2px;min-width:26px;}
+  .map-item .mt{font-family:'Cormorant',serif;font-size:18px;color:var(--forest-3);margin-bottom:4px;}
+  .map-item p{font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
+
+  .note-box{margin-top:28px;padding:18px 22px;border:1px solid var(--line);border-radius:3px;background:var(--paper-deep);font-size:13px;color:var(--ink-soft);max-width:760px;}
+  .note-box.on-dark{border-color:rgba(216,184,126,0.22);background:rgba(245,242,234,0.05);color:var(--on-forest-soft);}
+
+  .contact{background:var(--paper-deep);}
+  .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:70px;}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:44px;}}
+  .contact-copy h2{font-size:clamp(30px,4.2vw,46px);color:var(--forest-3);margin-bottom:20px;}
+  .contact-copy .refrain{font-family:'Cormorant',serif;font-style:italic;font-size:19px;color:var(--forest-2);max-width:460px;margin-bottom:22px;line-height:1.5;}
+  .contact-copy p.desc{color:var(--ink-soft);font-size:16px;max-width:460px;margin-bottom:34px;}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn-dark{background:var(--forest);color:var(--paper);padding:15px 28px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:background .3s ease;}
+  .btn-dark:hover{background:var(--forest-3);}
+  .btn-outline{border:1px solid var(--forest);color:var(--forest);padding:15px 28px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;border-radius:2px;transition:all .3s ease;}
+  .btn-outline:hover{background:var(--forest);color:var(--paper);}
+  .contact-card{background:var(--forest-3);border-radius:4px;padding:38px;color:var(--on-forest);border:1px solid rgba(216,184,126,0.2);}
+  .contact-card .row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(216,184,126,0.14);}
+  .contact-card .row:last-child{border-bottom:none;}
+  .contact-card .row .ic{color:var(--bronze-light);font-size:15px;width:20px;padding-top:2px;}
+  .contact-card .row .t{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--on-forest-soft);margin-bottom:5px;}
+  .contact-card .row .v{font-size:15.5px;color:var(--paper);font-family:'Cormorant',serif;}
+
+  footer{background:var(--forest-3);color:var(--on-forest-soft);padding:32px 0;}
+  .footer-inner{display:flex;flex-direction:column;gap:10px;font-size:12px;}
+  .footer-inner .fmark{color:var(--bronze-light);font-family:'Cormorant',serif;font-size:16px;}
+  .footer-inner p{max-width:900px;color:var(--on-forest-soft);}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="back-link" href="../index.html">&larr; Về trang giới thiệu</a>
+    <nav class="links" id="navLinks">
+      <a href="#moi-truong">Môi trường</a>
+      <a href="#thiet-ke">Thiết kế</a>
+      <a href="#tien-ich">Tiện ích</a>
+      <a href="#vi-tri">Vị trí</a>
+      <a href="#san-pham">Sản phẩm</a>
+    </nav>
+    <a class="nav-cta" href="tel:+84918602249">📞 0918 602 249</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-bg" src="../image-web/The%20TEN/dc236771a6f627a87ee7.jpg" alt="Toàn cảnh The TEN">
+  <div class="wrap hero-inner">
+    <div class="eyebrow"><span class="dash"></span> MIDORI PARK</div>
+    <h1>The TEN.<br>A New Dawn of Living.</h1>
+    <p class="hero-tagline">300 căn hộ cao cấp, nơi có Onsen chuẩn Nhật đầu tiên tại khu vực.</p>
+    <p class="hero-sub">Một bình minh mới cho phong cách sống — dự án đã hoàn thiện và bàn giao, thuộc quần thể MIDORI PARK của Becamex Tokyu tại Phường Bình Dương.</p>
+    <div class="stat-chips">
+      <div class="stat-chip"><div class="fv">300 căn hộ</div><div class="fl">Tổng quy mô</div></div>
+      <div class="stat-chip"><div class="fv">Đã bàn giao</div><div class="fl">Tình trạng</div></div>
+      <div class="stat-chip"><div class="fv">Onsen chuẩn Nhật</div><div class="fl">Tiện ích đặc trưng</div></div>
+      <div class="stat-chip"><div class="fv">A New Dawn of Living</div><div class="fl">Định vị</div></div>
+    </div>
+    <div class="hero-scroll"><span class="stem"></span><span>Cuộn để khám phá</span></div>
+  </div>
+</section>
+
+<section class="section" id="tong-quan">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">I</span><span class="dash"></span> Tổng quan dự án</div>
+      <h2>300 căn hộ cao cấp,<br>một bình minh mới cho cuộc sống</h2>
+    </div>
+    <div class="two-col">
+      <div class="prose reveal">
+        <p class="lead">The TEN là dự án căn hộ cao cấp với 300 căn, do Becamex Tokyu phát triển trong quần thể MIDORI PARK — mang định vị "A New Dawn of Living".</p>
+        <p>Dự án đã hoàn thiện và bàn giao cho cư dân. Điểm khác biệt lớn nhất của The TEN là khu Onsen chuẩn Nhật — mô hình tắm khoáng nóng theo phong cách Nhật Bản, được giới thiệu là đầu tiên tại khu vực vào thời điểm ra mắt.</p>
+      </div>
+      <div class="reveal">
+        <div class="feature-cols" style="grid-template-columns:1fr;">
+          <div class="feature-col">
+            <div class="ac-label">Tương lai mở rộng</div>
+            <h3>The TEN II</h3>
+            <p>Becamex Tokyu đã đề cập The TEN II như phần mở rộng tương lai của dòng sản phẩm The TEN trong quần thể MIDORI PARK.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section on-forest" id="moi-truong">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">II</span><span class="dash"></span> Môi trường sống</div>
+      <h2>Một cộng đồng đã ổn định<br>trong quần thể MIDORI PARK</h2>
+    </div>
+    <div class="two-col">
+      <div class="prose on-dark reveal">
+        <p>The TEN là một trong năm điểm đến thuộc quần thể MIDORI PARK — khu đô thị mang tinh thần "Living in the Green" của Tokyu, cùng The NEST, The GLORY, HARUKA và THE VIEW.</p>
+        <p>Với 300 căn hộ đã bàn giao, cư dân tại đây đang sinh sống trong một cộng đồng đã đi vào vận hành ổn định, không còn là công trường xây dựng.</p>
+      </div>
+      <div class="photo-grid reveal">
+        <div class="ph tall"><img src="../image-web/The%20TEN/d343035ac2dd43831acc.jpg" alt="The TEN — kiến trúc dự án"><div class="cap">Kiến trúc The TEN</div></div>
+        <div class="ph wide"><img src="../image-web/The%20TEN/My%20Documents%20%5B22-07-2026%2010_16%5D/7e4d21eeee696f37367815.jpg" alt="The TEN — không gian dự án"><div class="cap">Không gian nội khu</div></div>
+        <div class="ph wide"><img src="../image-web/The%20TEN/My%20Documents%20%5B22-07-2026%2010_16%5D/d93984864b01ca5f931016.jpg" alt="The TEN — cảnh quan dự án"><div class="cap">Cảnh quan dự án</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section deep" id="thiet-ke">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">III</span><span class="dash"></span> Thiết kế &amp; kiến trúc</div>
+      <h2>Onsen chuẩn Nhật,<br>điểm khác biệt của The TEN</h2>
+      <p>Định vị "A New Dawn of Living" thể hiện qua việc đưa văn hóa tắm khoáng Nhật Bản vào một dự án căn hộ tại Bình Dương — một hạng mục hiếm gặp trong khu vực vào thời điểm ra mắt.</p>
+    </div>
+    <div class="note-box on-dark">Thông tin cơ cấu tầng, số block và bản vẽ mặt bằng chi tiết của The TEN đang được xác minh với phòng kinh doanh và sẽ được cập nhật.</div>
+  </div>
+</section>
+
+<section class="section" id="tien-ich">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">IV</span><span class="dash"></span> Tiện ích</div>
+      <h2>Onsen chuẩn Nhật<br>đầu tiên tại khu vực</h2>
+    </div>
+    <div class="feature-cols reveal">
+      <div class="feature-col">
+        <div class="ac-label">Tiện ích đặc trưng</div>
+        <h3>Khu Onsen chuẩn Nhật</h3>
+        <p>Không gian tắm khoáng nóng theo phong cách Nhật Bản — tiện ích được giới thiệu là đầu tiên tại khu vực vào thời điểm dự án ra mắt.</p>
+      </div>
+      <div class="feature-col">
+        <div class="ac-label">Đang cập nhật</div>
+        <h3>Tiện ích nội khu khác</h3>
+        <p>Danh mục đầy đủ các tiện ích khác của The TEN đang được xác minh với phòng kinh doanh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section on-forest" id="vi-tri">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">V</span><span class="dash"></span> Vị trí &amp; hệ sinh thái xung quanh</div>
+      <h2>Một điểm trong quần thể<br>MIDORI PARK</h2>
+    </div>
+    <div class="map-list reveal" style="border-top-color:rgba(216,184,126,0.18);">
+      <div class="map-item" style="border-bottom-color:rgba(216,184,126,0.18);"><span class="mk" style="color:var(--bronze-light);">01</span><div><div class="mt" style="color:var(--paper);">Quần thể MIDORI PARK</div><p style="color:var(--on-forest-soft);">Cùng khu vực với The NEST, The GLORY và HARUKA — giữa VSIP II và trung tâm Thành phố Mới Bình Dương.</p></div></div>
+      <div class="map-item" style="border-bottom-color:rgba(216,184,126,0.18);"><span class="mk" style="color:var(--bronze-light);">02</span><div><div class="mt" style="color:var(--paper);">Giáo dục</div><p style="color:var(--on-forest-soft);">Singapore International School, Việt Hoa International School, Eastern International University trong khu vực.</p></div></div>
+      <div class="map-item" style="border-bottom-color:rgba(216,184,126,0.18);"><span class="mk" style="color:var(--bronze-light);">03</span><div><div class="mt" style="color:var(--paper);">Thương mại</div><p style="color:var(--on-forest-soft);">MIDORI PARK SQUARE, AEON, WTC Tower nằm trong cùng khu vực.</p></div></div>
+      <div class="map-item" style="border-bottom-color:rgba(216,184,126,0.18);"><span class="mk" style="color:var(--bronze-light);">04</span><div><div class="mt" style="color:var(--paper);">Di chuyển</div><p style="color:var(--on-forest-soft);">Becamex Tokyu Bus (KAZE Shuttle) và Metro Line 1 Bình Dương – Suối Tiên (dự kiến 2031).</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section deep" id="san-pham">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">VI</span><span class="dash"></span> Sản phẩm</div>
+      <h2>300 căn hộ,<br>thông tin loại căn đang được cập nhật</h2>
+    </div>
+    <div class="note-box on-dark" style="max-width:100%;">
+      <strong style="color:var(--paper);">Thông tin đang được xác minh.</strong> Loại căn, diện tích cụ thể và tình trạng giỏ hàng thứ cấp của The TEN sẽ được cập nhật tại đây sau khi có dữ liệu chính thức từ phòng kinh doanh — dự án hiện đã bàn giao toàn bộ 300 căn hộ. Liên hệ trực tiếp nếu bạn quan tâm giao dịch mua bán lại hoặc thông tin về The TEN II.
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="lien-he">
+  <div class="wrap contact-grid">
+    <div class="contact-copy reveal">
+      <div class="kicker" style="display:flex;align-items:center;gap:12px;color:var(--forest-2);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:18px;">
+        <span class="chapter-num mono" style="color:var(--bronze);">VII</span><span class="dash" style="width:34px;height:1px;background:var(--bronze);"></span> Liên hệ
+      </div>
+      <h2>Quan tâm The TEN?</h2>
+      <p class="refrain">Tôi hỗ trợ tư vấn thông tin dự án, giao dịch thứ cấp và cập nhật về The TEN II trong hệ sinh thái Becamex Tokyu.</p>
+      <p class="desc">Để lại lời nhắn qua điện thoại hoặc Zalo, tôi sẽ phản hồi sớm nhất với thông tin bạn cần.</p>
+      <div class="contact-actions">
+        <a class="btn-dark" href="tel:+84918602249">Gọi tư vấn: 0918 602 249</a>
+        <a class="btn-outline" href="https://zalo.me/0918602249" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+    <div class="contact-card reveal">
+      <div class="row"><span class="ic">☎</span><div><div class="t">Điện thoại / Zalo</div><div class="v">+84 91 860 22 49</div></div></div>
+      <div class="row"><span class="ic">◈</span><div><div class="t">Dự án</div><div class="v">The TEN — MIDORI PARK</div></div></div>
+      <div class="row"><span class="ic">⌂</span><div><div class="t">Khu vực</div><div class="v">Phường Bình Dương</div></div></div>
+      <div class="row"><span class="ic">f</span><div><div class="t">Facebook</div><div class="v"><a href="https://www.facebook.com/profile.php?id=100034539233437" target="_blank" rel="noopener">Becamex Tokyu — Tố Như</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="fmark">Tố Như · Becamex Tokyu</div>
+    <p>Hình ảnh trên trang này là ảnh thực tế được cung cấp cho dự án The TEN. Thông tin loại căn và giỏ hàng thứ cấp sẽ được bổ sung sau khi xác minh.</p>
+    <div>© 2026 · Trang giới thiệu cá nhân — không phải kênh chính thức của Becamex Tokyu.</div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', ()=>{
+    const open = navLinks.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{ navLinks.classList.remove('is-open'); navToggle.setAttribute('aria-expanded','false'); });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIDORI PARK The NEST | Tố Như — Becamex Tokyu</title>
+<meta name="description" content="The NEST — 972 căn hộ, 2 tòa EAST/WEST, ngay trung tâm TOD Phường Bình Dương. Câu chuyện, không gian sống, kiến trúc và tiện ích — cùng góc nhìn tư vấn cá nhân của Tố Như.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@1,700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F2EA; --paper-deep:#ECE5D4;
+    --forest:#12332B; --forest-2:#1B463A; --forest-3:#0C221C;
+    --bronze:#B4874A; --bronze-light:#D8B87E; --terracotta:#B0603F;
+    --ink:#1C2119; --ink-soft:rgba(28,33,25,0.62); --ink-faint:rgba(28,33,25,0.38);
+    --line:rgba(18,51,43,0.14);
+    --on-forest:rgba(245,242,234,0.82); --on-forest-soft:rgba(245,242,234,0.55);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:'Be Vietnam Pro',sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Cormorant',serif;font-weight:500;letter-spacing:0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--bronze);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){ *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;} html{scroll-behavior:auto;} }
+
+  /* NAV */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(18,51,43,0.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(216,184,126,0.18);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 32px;max-width:1180px;margin:0 auto;}
+  .back-link{display:flex;align-items:center;gap:8px;color:var(--on-forest);font-size:13px;letter-spacing:0.03em;flex:0 0 auto;}
+  .back-link:hover{color:var(--bronze-light);}
+  nav.links{display:flex;gap:26px;}
+  nav.links a{color:var(--on-forest);font-size:12.5px;letter-spacing:0.09em;text-transform:uppercase;position:relative;padding-bottom:4px;white-space:nowrap;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--bronze-light);transition:width .3s ease;}
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{display:flex;align-items:center;gap:8px;background:var(--bronze-light);color:var(--forest-3);padding:9px 16px;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;border-radius:2px;white-space:nowrap;transition:background .3s ease;}
+  .nav-cta:hover{background:#EAD09B;}
+  .nav-toggle{display:none;background:none;border:none;color:var(--paper);font-size:22px;cursor:pointer;flex:0 0 auto;}
+  @media(max-width:900px){
+    nav.links{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;background:var(--forest-3);border-bottom:1px solid rgba(216,184,126,0.18);max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    nav.links.is-open{max-height:400px;}
+    nav.links a{padding:15px 32px;border-top:1px solid rgba(216,184,126,0.1);}
+    .nav-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  /* HERO */
+  .hero{position:relative;min-height:82vh;display:flex;align-items:flex-end;color:var(--on-forest);overflow:hidden;}
+  .hero img.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(12,34,28,0.15) 0%, rgba(12,34,28,0.55) 55%, rgba(12,34,28,0.94) 100%);}
+  .hero-inner{position:relative;z-index:2;padding:168px 0 64px;width:100%;}
+  .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;color:var(--bronze-light);font-size:12.5px;letter-spacing:0.22em;text-transform:uppercase;}
+  .eyebrow .dash{width:34px;height:1px;background:var(--bronze-light);}
+  .hero h1{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(48px,7.4vw,88px);color:var(--paper);line-height:0.98;letter-spacing:-0.005em;max-width:820px;}
+  .hero-tagline{margin-top:20px;max-width:600px;font-family:'Cormorant',serif;font-style:italic;font-weight:400;font-size:clamp(28px,3.6vw,40px);color:var(--bronze-light);line-height:1.3;letter-spacing:0;}
+  .hero-sub{margin-top:18px;max-width:640px;font-size:16px;color:var(--on-forest);}
+  .stat-chips{display:flex;flex-wrap:wrap;gap:1px;background:rgba(216,184,126,0.18);margin-top:38px;border:1px solid rgba(216,184,126,0.18);border-radius:3px;overflow:hidden;}
+  .stat-chip{flex:1 1 150px;background:rgba(12,34,28,0.72);padding:16px 20px;}
+  .stat-chip .fv{font-family:'Cormorant',serif;font-size:21px;color:var(--paper);white-space:nowrap;}
+  .stat-chip .fl{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--on-forest-soft);margin-top:5px;}
+  .hero-scroll{margin-top:40px;display:flex;align-items:center;gap:10px;color:var(--on-forest-soft);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;}
+  .hero-scroll .stem{width:26px;height:1px;background:var(--bronze-light);}
+
+  /* SECTIONS */
+  .section{padding:100px 0;}
+  .section.tight{padding:80px 0;}
+  .head{max-width:660px;margin-bottom:52px;}
+  .head .kicker{display:flex;align-items:center;flex-wrap:wrap;row-gap:6px;gap:12px;color:var(--forest-2);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:18px;}
+  .head .kicker .dash{width:34px;height:1px;background:var(--bronze);flex:0 0 auto;}
+  .head .kicker .chapter-num{font-family:'JetBrains Mono',monospace;color:var(--bronze);}
+  .head h2{font-size:clamp(28px,3.8vw,42px);color:var(--forest-3);}
+  .head p{margin-top:16px;color:var(--ink-soft);font-size:15.5px;max-width:560px;}
+  .section.on-forest{background:var(--forest);color:var(--on-forest);}
+  .section.on-forest .head .kicker,
+  .section.on-forest .head .kicker .chapter-num{color:var(--bronze-light);}
+  .section.on-forest .head .kicker .dash{background:var(--bronze-light);}
+  .section.on-forest .head h2{color:var(--paper);}
+  .section.on-forest .head p{color:var(--on-forest-soft);}
+  .section.deep{background:var(--forest-3);color:var(--on-forest);}
+  .section.deep .head .kicker,
+  .section.deep .head .kicker .chapter-num{color:var(--bronze-light);}
+  .section.deep .head .kicker .dash{background:var(--bronze-light);}
+  .section.deep .head h2{color:var(--paper);}
+  .section.deep .head p{color:var(--on-forest-soft);}
+
+  .prose p{color:var(--ink-soft);font-size:16px;margin-bottom:16px;max-width:640px;}
+  .prose.on-dark p{color:var(--on-forest);}
+  .prose p.lead{font-family:'Cormorant',serif;font-size:23px;color:var(--forest-3);font-weight:500;line-height:1.5;margin-bottom:20px;}
+  .prose.on-dark p.lead{color:var(--paper);}
+
+  .two-col{display:grid;grid-template-columns:0.95fr 1.05fr;gap:60px;align-items:start;}
+  @media(max-width:900px){.two-col{grid-template-columns:1fr;gap:40px;}}
+
+  .photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .photo-grid .ph{position:relative;overflow:hidden;border-radius:3px;border:1px solid rgba(216,184,126,0.18);}
+  .photo-grid .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .photo-grid .ph:hover img{transform:scale(1.04);}
+  .photo-grid .ph.tall{grid-row:span 2;aspect-ratio:3/4;}
+  .photo-grid .ph.wide{aspect-ratio:4/3;}
+  .photo-grid .ph .cap{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(0deg, rgba(12,34,28,0.86), transparent);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:rgba(245,242,234,0.75);}
+
+  /* FLOOR / TOWER STRUCTURE */
+  .tower-list{display:flex;flex-direction:column;border-top:1px solid rgba(216,184,126,0.18);}
+  .tower-row{display:flex;gap:22px;padding:20px 0;border-bottom:1px solid rgba(216,184,126,0.18);}
+  .tower-row .fl-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--bronze-light);flex:0 0 auto;padding-top:3px;min-width:96px;}
+  .tower-row .fl-t{font-family:'Cormorant',serif;font-size:19px;color:var(--paper);margin-bottom:3px;}
+  .tower-row p{font-size:13.5px;color:var(--on-forest-soft);}
+
+  /* AMENITY LIST */
+  .amenity-cols{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media(max-width:760px){.amenity-cols{grid-template-columns:1fr;}}
+  .amenity-col{background:var(--paper);padding:36px 32px;}
+  .amenity-col .ac-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:6px;}
+  .amenity-col h3{font-size:22px;color:var(--forest-3);margin-bottom:16px;}
+  .amenity-col ul{list-style:none;}
+  .amenity-col li{font-size:14.5px;color:var(--ink-soft);padding:10px 0;border-top:1px solid var(--line);}
+  .amenity-col li:first-of-type{border-top:none;}
+
+  /* ECOSYSTEM / LOCATION LIST */
+  .map-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+  .map-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .map-item .mk{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--bronze);flex:0 0 auto;padding-top:2px;min-width:26px;}
+  .map-item .mt{font-family:'Cormorant',serif;font-size:18px;color:var(--forest-3);margin-bottom:4px;}
+  .map-item p{font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
+  .map-frame{border-radius:4px;overflow:hidden;border:1px solid var(--line);min-height:340px;background:var(--paper-deep);filter:grayscale(0.15) contrast(1.02);}
+  .map-frame iframe{width:100%;height:100%;min-height:340px;display:block;}
+  .map-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:stretch;}
+  @media(max-width:900px){.map-grid{grid-template-columns:1fr;}}
+
+  .note-box{margin-top:28px;padding:18px 22px;border:1px solid var(--line);border-radius:3px;background:var(--paper-deep);font-size:13px;color:var(--ink-soft);max-width:760px;}
+  .note-box.on-dark{border-color:rgba(216,184,126,0.22);background:rgba(245,242,234,0.05);color:var(--on-forest-soft);}
+
+  /* CTA */
+  .contact{background:var(--paper-deep);}
+  .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:70px;}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:44px;}}
+  .contact-copy h2{font-size:clamp(30px,4.2vw,46px);color:var(--forest-3);margin-bottom:20px;}
+  .contact-copy .refrain{font-family:'Cormorant',serif;font-style:italic;font-size:19px;color:var(--forest-2);max-width:460px;margin-bottom:22px;line-height:1.5;}
+  .contact-copy p.desc{color:var(--ink-soft);font-size:16px;max-width:460px;margin-bottom:34px;}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn-dark{background:var(--forest);color:var(--paper);padding:15px 28px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:background .3s ease;}
+  .btn-dark:hover{background:var(--forest-3);}
+  .btn-outline{border:1px solid var(--forest);color:var(--forest);padding:15px 28px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;border-radius:2px;transition:all .3s ease;}
+  .btn-outline:hover{background:var(--forest);color:var(--paper);}
+  .contact-card{background:var(--forest-3);border-radius:4px;padding:38px;color:var(--on-forest);border:1px solid rgba(216,184,126,0.2);}
+  .contact-card .row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(216,184,126,0.14);}
+  .contact-card .row:last-child{border-bottom:none;}
+  .contact-card .row .ic{color:var(--bronze-light);font-size:15px;width:20px;padding-top:2px;}
+  .contact-card .row .t{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--on-forest-soft);margin-bottom:5px;}
+  .contact-card .row .v{font-size:15.5px;color:var(--paper);font-family:'Cormorant',serif;}
+
+  footer{background:var(--forest-3);color:var(--on-forest-soft);padding:32px 0;}
+  .footer-inner{display:flex;flex-direction:column;gap:10px;font-size:12px;}
+  .footer-inner .fmark{color:var(--bronze-light);font-family:'Cormorant',serif;font-size:16px;}
+  .footer-inner p{max-width:900px;color:var(--on-forest-soft);}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="back-link" href="../index.html">&larr; Về trang giới thiệu</a>
+    <nav class="links" id="navLinks">
+      <a href="#moi-truong">Môi trường</a>
+      <a href="#thiet-ke">Thiết kế</a>
+      <a href="#tien-ich">Tiện ích</a>
+      <a href="#xung-quanh">Xung quanh</a>
+      <a href="#vi-tri">Vị trí</a>
+    </nav>
+    <a class="nav-cta" href="tel:+84918602249">📞 0918 602 249</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-bg" src="../image-web/The%20NEST/The-NEST-BUILDING-DAY-scaled.jpg" alt="Toàn cảnh The NEST ban ngày">
+  <div class="wrap hero-inner">
+    <div class="eyebrow"><span class="dash"></span> MIDORI PARK · TOD CENTER, PHƯỜNG BÌNH DƯƠNG</div>
+    <h1>The NEST.</h1>
+    <p class="hero-tagline">Nghĩa là tổ ấm —<br>một nơi được xây để trở về.</p>
+    <p class="hero-sub">972 căn hộ trải trên 2 tòa EAST &amp; WEST, ngay trung tâm TOD của Phường Bình Dương. Tòa EAST đang mở bán với quỹ căn từ Studio đến Penthouse; tòa WEST đã bán hết toàn bộ 389 căn. Dự án nằm trên khu đất 10.697 m², chủ đầu tư Becamex Tokyu.</p>
+    <div class="stat-chips">
+      <div class="stat-chip"><div class="fv">972 căn · 2 tòa</div><div class="fl">Tổng quy mô</div></div>
+      <div class="stat-chip"><div class="fv">Tòa EAST · 25 tầng</div><div class="fl">Đang mở bán</div></div>
+      <div class="stat-chip"><div class="fv">34,2 – 142,4 m²</div><div class="fl">Diện tích căn</div></div>
+      <div class="stat-chip"><div class="fv">Studio – Penthouse</div><div class="fl">Loại hình</div></div>
+    </div>
+    <div class="hero-scroll"><span class="stem"></span><span>Cuộn để khám phá</span></div>
+  </div>
+</section>
+
+<!-- I — TỔNG QUAN -->
+<section class="section" id="tong-quan">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">I</span><span class="dash"></span> Tổng quan dự án</div>
+      <h2>Hai tòa tháp, một khu đô thị xanh<br>ngay trung tâm Phường Bình Dương</h2>
+    </div>
+    <div class="two-col">
+      <div class="prose reveal">
+        <p class="lead">MIDORI PARK The NEST — tên thương hiệu The NEST — là dự án mới nhất của Becamex Tokyu tại Lô H5 &amp; H7, Phường Bình Dương, TP. Hồ Chí Minh.</p>
+        <p>Dự án gồm 972 căn hộ chia thành hai tòa: EAST cao 25 tầng với 583 căn, và WEST cao 16 tầng với 389 căn. Tòa EAST hiện đang mở bán, còn tòa WEST đã bán hết toàn bộ quỹ căn.</p>
+        <p>Tầng 1 của tòa EAST là khối đế tiện ích dùng chung cho cư dân, các tầng 6–23 là căn hộ điển hình từ Studio đến 3 phòng ngủ, và toàn bộ tầng 25 dành riêng cho các căn Penthouse cùng tiện ích trên cao.</p>
+      </div>
+      <div class="reveal">
+        <div class="tower-list" style="border-top:1px solid var(--line);">
+          <div class="tower-row" style="border-color:var(--line);">
+            <div class="fl-num" style="color:var(--bronze);">EAST</div>
+            <div><div class="fl-t" style="color:var(--forest-3);">25 tầng · 583 căn</div><p style="color:var(--ink-soft);">Đang chào đón cư dân mới</p></div>
+          </div>
+          <div class="tower-row" style="border-color:var(--line);">
+            <div class="fl-num" style="color:var(--bronze);">WEST</div>
+            <div><div class="fl-t" style="color:var(--forest-3);">16 tầng · 389 căn</div><p style="color:var(--ink-soft);">Đã bán hết — không còn căn để chào bán</p></div>
+          </div>
+          <div class="tower-row" style="border-color:var(--line);">
+            <div class="fl-num" style="color:var(--bronze);">ĐẤT</div>
+            <div><div class="fl-t" style="color:var(--forest-3);">10.697 m²</div><p style="color:var(--ink-soft);">Quy mô đất toàn dự án</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- II — MÔI TRƯỜNG SỐNG -->
+<section class="section on-forest" id="moi-truong">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">II</span><span class="dash"></span> Môi trường sống</div>
+      <h2>Nơi phố thị và mảng xanh<br>không còn là hai thế giới</h2>
+    </div>
+    <div class="two-col">
+      <div class="prose on-dark reveal">
+        <p>The NEST là mảnh ghép mới nhất trong quần thể MIDORI PARK — khu đô thị mang tinh thần "Living in the Green" của Nhật Bản, tọa lạc tại Lô H5 &amp; H7, ngay trung tâm Phường Bình Dương.</p>
+        <p>Dự án liền kề Trường Quốc tế Việt Hoa và một khu thương mại mới, với hai mặt tiền đường Bùi Thị Xuân và Lý Thái Tổ — kết nối hạ tầng khu vực trong khoảng 2–7 phút theo sơ đồ quy hoạch.</p>
+        <p>Sales Gallery của dự án đặt tại Lô A11, Đường Lý Thái Tổ, Phường Bình Dương, TP. Hồ Chí Minh — nơi khách hàng có thể tham quan trực tiếp mô hình và nhà mẫu.</p>
+      </div>
+      <div class="photo-grid reveal">
+        <div class="ph tall"><img src="../image-web/The%20NEST/EAST-Tower-LOBBY.jpg" alt="Sảnh chờ EAST Tower"><div class="cap">Đại sảnh EAST Tower</div></div>
+        <div class="ph wide"><img src="../image-web/The%20NEST/WEST-TOWER-COMMERCIAL-SPACE-scaled.jpg" alt="Phố thương mại NEST"><div class="cap">Phố thương mại NEST</div></div>
+        <div class="ph wide"><img src="../image-web/The%20NEST/EAST-Tower-TYPICAL-CORRIRDOR.jpg" alt="Hành lang căn hộ EAST Tower"><div class="cap">Hành lang tầng ở điển hình</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- III — THIẾT KẾ & KIẾN TRÚC -->
+<section class="section deep" id="thiet-ke">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">III</span><span class="dash"></span> Thiết kế &amp; kiến trúc</div>
+      <h2>Cơ cấu tầng rõ ràng,<br>từ khối đế đến tầng mây</h2>
+    </div>
+    <div class="two-col">
+      <div class="reveal">
+        <div class="photo-grid">
+          <div class="ph wide" style="grid-column:span 2;aspect-ratio:16/9;"><img src="../image-web/The%20NEST/EAST-Tower-TYPICAL-LIFT-LOBBY-.jpg" alt="Sảnh thang máy tầng ở điển hình EAST Tower"><div class="cap">Sảnh thang máy — tầng ở điển hình</div></div>
+          <div class="ph wide"><img src="../image-web/The%20NEST/EAST-Tower-CHANGING-ROOM-1.jpg" alt="Phòng thay đồ khu tiện ích EAST Tower"><div class="cap">Phòng thay đồ — khối đế tiện ích</div></div>
+          <div class="ph wide"><img src="../image-web/The%20NEST/Y1A-1-scaled.jpg" alt="Không gian căn mẫu loại Y1 tại tháp EAST"><div class="cap">Nhà mẫu — căn Y1</div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="tower-list">
+          <div class="tower-row"><div class="fl-num">Tầng 1</div><div><div class="fl-t">Khối đế tiện ích chung</div><p>Sảnh, gym, sân thể thao, phố thương mại NEST và các không gian sinh hoạt chung của cư dân.</p></div></div>
+          <div class="tower-row"><div class="fl-num">Tầng 6–23</div><div><div class="fl-t">Tầng ở điển hình</div><p>Đầy đủ các loại căn từ Studio đến 3 phòng ngủ, bố trí theo mặt bằng tầng chuẩn.</p></div></div>
+          <div class="tower-row"><div class="fl-num">Tầng 25</div><div><div class="fl-t">Toàn bộ Penthouse</div><p>Kèm khu tiện ích trên cao: hồ bơi trên mây, sky gym, sky yoga, sky lounge.</p></div></div>
+        </div>
+        <div class="note-box on-dark">Nhà mẫu tham khảo thuộc loại căn Y1 (1PN + phòng đa năng + 1WC, 50,5 – 51,3 m²) tại tòa EAST.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IV — TIỆN ÍCH -->
+<section class="section" id="tien-ich">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">IV</span><span class="dash"></span> Tiện ích</div>
+      <h2>79+ tiện ích,<br>từ khối đế đến tầng thượng</h2>
+      <p>Không gian sống của The NEST không dừng lại ở căn hộ — mỗi tầng đều có một vai trò riêng trong đời sống thường nhật của cư dân.</p>
+    </div>
+    <div class="amenity-cols reveal">
+      <div class="amenity-col">
+        <div class="ac-label">Tầng 1 · Khối đế dùng chung</div>
+        <h3>Đời sống thường nhật</h3>
+        <ul>
+          <li>Đại sảnh, lễ tân, khu vực thư tín, trạm giao nhận thông minh</li>
+          <li>Terra Gym · Terra Yoga</li>
+          <li>Phố thương mại NEST</li>
+          <li>Vũ trụ tuổi thơ — khu vui chơi trẻ em trong nhà, phòng bé yêu</li>
+          <li>Sân thể thao đa năng, đường chạy năng lượng, lối đi cầu vồng</li>
+          <li>Vườn ươm Hạnh Phúc, thảm cỏ bình yên, quảng trường ánh sáng</li>
+        </ul>
+      </div>
+      <div class="amenity-col">
+        <div class="ac-label">Tầng 25 · Tòa EAST</div>
+        <h3>Tiện ích trên cao</h3>
+        <ul>
+          <li>Sky Pool — hồ bơi trên mây &amp; hồ bơi trẻ em</li>
+          <li>Sky Gym · Sky Yoga</li>
+          <li>Vườn ánh sáng</li>
+          <li>Skyview BBQ — vườn nướng trên không</li>
+          <li>Sky Lounge — phòng tiệc trên cao</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V — HỆ SINH THÁI XUNG QUANH -->
+<section class="section on-forest" id="xung-quanh">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">V</span><span class="dash"></span> Hệ sinh thái xung quanh</div>
+      <h2>Liền kề trường quốc tế<br>và khu thương mại mới</h2>
+      <p>Cư dân The NEST bước vào một khu vực đã có sẵn giáo dục và thương mại ngay trong bán kính vài phút.</p>
+    </div>
+    <div class="map-list reveal" style="border-top-color:rgba(216,184,126,0.18);">
+      <div class="map-item" style="border-bottom-color:rgba(216,184,126,0.18);"><span class="mk" style="color:var(--bronze-light);">01</span><div><div class="mt" style="color:var(--paper);">Giáo dục</div><p style="color:var(--on-forest-soft);">Trường Quốc tế Việt Hoa — nằm ngay cạnh dự án, kết nối 2–7 phút theo sơ đồ hạ tầng khu vực.</p></div></div>
+      <div class="map-item" style="border-bottom-color:rgba(216,184,126,0.18);"><span class="mk" style="color:var(--bronze-light);">02</span><div><div class="mt" style="color:var(--paper);">Thương mại</div><p style="color:var(--on-forest-soft);">Khu thương mại mới liền kề, cùng phố thương mại NEST ngay trong khối đế tầng 1.</p></div></div>
+      <div class="map-item" style="border-bottom-color:rgba(216,184,126,0.18);"><span class="mk" style="color:var(--bronze-light);">03</span><div><div class="mt" style="color:var(--paper);">Tư vấn trực tiếp</div><p style="color:var(--on-forest-soft);">Becamex Tokyu Sales Gallery — Lô A11, Đường Lý Thái Tổ, Phường Bình Dương. Tel: (0274).222.1109.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VI — VỊ TRÍ & KẾT NỐI -->
+<section class="section" id="vi-tri">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="chapter-num">VI</span><span class="dash"></span> Vị trí &amp; khả năng kết nối</div>
+      <h2>Lô H5 &amp; H7,<br>Phường Bình Dương, TP. Hồ Chí Minh</h2>
+    </div>
+    <div class="map-grid reveal">
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=L%C3%BD%20Th%C3%A1i%20T%E1%BB%95%2C%20Ph%C6%B0%E1%BB%9Dng%20B%C3%ACnh%20D%C6%B0%C6%A1ng%2C%20TP.HCM&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Bản đồ vị trí The NEST"></iframe>
+      </div>
+      <div class="map-list">
+        <div class="map-item"><span class="mk">01</span><div><div class="mt">Mặt tiền</div><p>Hai trục đường Bùi Thị Xuân và Lý Thái Tổ.</p></div></div>
+        <div class="map-item"><span class="mk">02</span><div><div class="mt">Liền kề</div><p>Trường Quốc tế Việt Hoa và khu thương mại mới.</p></div></div>
+        <div class="map-item"><span class="mk">03</span><div><div class="mt">Kết nối hạ tầng</div><p>Khoảng 2–7 phút tới các điểm hạ tầng trọng điểm trong khu vực, theo sơ đồ siêu hạ tầng đô thị.</p></div></div>
+        <div class="map-item"><span class="mk">04</span><div><div class="mt">Sales Gallery</div><p>Lô A11, Đường Lý Thái Tổ, Phường Bình Dương, TP. Hồ Chí Minh. Tel: (0274).222.1109 — Fax: (0274).222.1112.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section contact" id="lien-he">
+  <div class="wrap contact-grid">
+    <div class="contact-copy reveal">
+      <div class="kicker" style="display:flex;align-items:center;gap:12px;color:var(--forest-2);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:18px;">
+        <span class="chapter-num mono" style="color:var(--bronze);">VII</span><span class="dash" style="width:34px;height:1px;background:var(--bronze);"></span> Liên hệ
+      </div>
+      <h2>Kết nối cùng Tố Như</h2>
+      <p class="refrain">Tôi đồng hành cùng bạn tìm hiểu The NEST — từ không gian sống, kiến trúc, tiện ích đến nhịp sống cộng đồng — bằng góc nhìn của một người tư vấn trực tiếp từ chủ đầu tư.</p>
+      <p class="desc">Để lại lời nhắn qua điện thoại hoặc Zalo, tôi sẽ phản hồi sớm nhất để cùng bạn tìm hiểu The NEST kỹ hơn.</p>
+      <div class="contact-actions">
+        <a class="btn-dark" href="tel:+84918602249">Nhận tư vấn riêng: 0918 602 249</a>
+        <a class="btn-outline" href="https://zalo.me/0918602249" target="_blank" rel="noopener">Nhắn Zalo</a>
+      </div>
+    </div>
+    <div class="contact-card reveal">
+      <div class="row"><span class="ic">☎</span><div><div class="t">Điện thoại / Zalo</div><div class="v">+84 91 860 22 49</div></div></div>
+      <div class="row"><span class="ic">◈</span><div><div class="t">Dự án</div><div class="v">MIDORI PARK The NEST</div></div></div>
+      <div class="row"><span class="ic">⌂</span><div><div class="t">Sales Gallery</div><div class="v">Lô A11, Đường Lý Thái Tổ, Bình Dương</div></div></div>
+      <div class="row"><span class="ic">f</span><div><div class="t">Facebook</div><div class="v"><a href="https://www.facebook.com/profile.php?id=100034539233437" target="_blank" rel="noopener">Becamex Tokyu — Tố Như</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="fmark">Tố Như · Becamex Tokyu</div>
+    <p>Thông tin tổng hợp từ tài liệu chính thức của chủ đầu tư Becamex Tokyu, tính đến thời điểm 20/07/2026. Vui lòng liên hệ trực tiếp để được tư vấn và cập nhật thông tin mới nhất về dự án.</p>
+    <div>© 2026 · Trang giới thiệu cá nhân — không phải kênh chính thức của Becamex Tokyu.</div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', ()=>{
+    const open = navLinks.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{ navLinks.classList.remove('is-open'); navToggle.setAttribute('aria-expanded','false'); });
+  });
+</script>
+
+</body>
+</html>

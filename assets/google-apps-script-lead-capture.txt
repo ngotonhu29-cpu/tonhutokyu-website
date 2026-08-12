@@ -1,0 +1,71 @@
+HƯỚNG DẪN KẾT NỐI FORM LEAD VỚI GOOGLE SHEET (miễn phí, Như tự sở hữu dữ liệu)
+================================================================================
+
+BƯỚC 1 — Tạo Google Sheet
+1. Vào sheets.google.com → tạo 1 sheet mới, đặt tên tuỳ ý, ví dụ "Lead website".
+
+BƯỚC 2 — Dán code vào Apps Script
+1. Trong sheet vừa tạo: menu Tiện ích mở rộng (Extensions) → Apps Script.
+2. Xoá hết code mẫu có sẵn, dán toàn bộ đoạn code bên dưới vào.
+3. Bấm biểu tượng Lưu (đĩa mềm).
+
+--- DÁN TỪ DÒNG NÀY ---
+
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Leads');
+  if (!sheet) {
+    sheet = SpreadsheetApp.getActiveSpreadsheet().insertSheet('Leads');
+  }
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(['Thời gian', 'Họ tên', 'Số điện thoại', 'Dự án quan tâm', 'Mục đích']);
+  }
+
+  var data = JSON.parse(e.postData.contents);
+  sheet.appendRow([
+    new Date(),
+    data.name || '',
+    data.phone || '',
+    data.project || '',
+    data.goal || ''
+  ]);
+
+  try {
+    var notifyEmail = 'ngo.to.nhu@becamex-tokyu.com';
+    MailApp.sendEmail(
+      notifyEmail,
+      'Lead mới từ website — ' + (data.name || ''),
+      'Họ tên: ' + (data.name || '') + '\n' +
+      'Số điện thoại: ' + (data.phone || '') + '\n' +
+      'Dự án quan tâm: ' + (data.project || '') + '\n' +
+      'Mục đích: ' + (data.goal || '') + '\n\n' +
+      'Xem đầy đủ trong Google Sheet "Leads".'
+    );
+  } catch (err) {
+    // Không chặn việc ghi vào Sheet nếu gửi email lỗi.
+  }
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ ok: true }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+--- DÁN ĐẾN DÒNG NÀY ---
+
+BƯỚC 3 — Deploy thành Web App
+1. Góc trên phải: bấm nút xanh "Deploy" (Triển khai) → "New deployment" (Triển khai mới).
+2. Bấm biểu tượng bánh răng cạnh "Select type" → chọn "Web app".
+3. Trong mục "Execute as": chọn "Me (email của Như)".
+4. Trong mục "Who has access": chọn "Anyone" (bắt buộc, nếu không web sẽ không gửi được).
+5. Bấm "Deploy". Google sẽ hỏi cấp quyền — chọn tài khoản của Như, bấm "Advanced" → "Go to [tên project] (unsafe)" → "Allow". (An toàn — đây là cảnh báo mặc định của Google cho script tự viết, không phải app bên ngoài.)
+6. Copy đường link "Web app URL" hiện ra (dạng https://script.google.com/macros/s/xxxxx/exec).
+
+BƯỚC 4 — Gửi link đó cho tôi (Claude)
+Đưa đường link vừa copy vào cuộc trò chuyện, tôi sẽ dán vào file assets/homepage.js
+(biến LEAD_FORM_ENDPOINT ở đầu file) — chỉ mất 1 dòng code, xong là form hoạt động thật.
+
+Từ lúc đó, mỗi lượt khách gửi form sẽ:
+- Ghi thành 1 dòng trong Google Sheet "Leads" (thời gian, tên, SĐT, dự án, mục đích)
+- Đồng thời gửi email thông báo ngay vào ngo.to.nhu@becamex-tokyu.com
+
+Nếu chưa kịp làm bước này, form vẫn hoạt động theo cách cũ (mở email soạn sẵn — mailto)
+để không có gì bị hỏng trong lúc chờ.

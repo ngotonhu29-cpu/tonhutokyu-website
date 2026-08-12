@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tố Như | Becamex Tokyu — A Life in the New City</title>
 <meta name="description" content="Tố Như — chuyên viên tư vấn trực tiếp từ Becamex Tokyu, sống tại Thành phố Mới Bình Dương từ năm 2018. Không chỉ giúp bạn chọn một căn hộ, mà giúp bạn hiểu nơi mình sắp sống.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/sticky-bar.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -683,6 +685,79 @@
     content:"“";display:block;font-family:var(--font-accent);font-style:normal;
     font-size:44px;line-height:0.6;color:var(--bronze-light);opacity:0.6;margin-bottom:6px;
   }
+
+  /* ===== COMPARE — 6 DỰ ÁN, MỘT LỰA CHỌN PHÙ HỢP ===== */
+  .compare-intro{max-width:640px;margin:64px 0 34px;}
+  .compare-intro h3{font-size:clamp(24px,3vw,32px);color:var(--paper);font-style:italic;font-weight:400;}
+  .compare-intro p{margin-top:12px;color:var(--on-forest-soft);font-size:15.5px;}
+  .compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(216,184,126,0.16);border:1px solid rgba(216,184,126,0.16);}
+  @media(max-width:900px){.compare-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:640px){.compare-grid{grid-template-columns:1fr;}}
+  .compare-card{background:var(--forest-3);padding:26px 24px;display:flex;flex-direction:column;gap:12px;}
+  .compare-card .cc-name{font-family:var(--font-accent);font-size:21px;color:var(--paper);}
+  .compare-card .cc-row{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;border-top:1px solid rgba(216,184,126,0.12);padding-top:9px;}
+  .compare-card .cc-row .cc-label{color:var(--on-forest-soft);letter-spacing:0.04em;text-transform:uppercase;font-family:var(--font-nav);font-size:10.5px;}
+  .compare-card .cc-row .cc-value{color:var(--paper);text-align:right;font-family:var(--font-accent);font-size:14.5px;}
+  .compare-card .cc-highlight{font-size:13.5px;color:var(--on-forest-soft);line-height:1.6;flex:1 1 auto;}
+  .compare-card .cc-cta{align-self:flex-start;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--bronze-light);border-bottom:1px solid rgba(216,184,126,0.4);padding-bottom:2px;margin-top:auto;}
+  .compare-card.light{background:var(--paper);border:1px solid var(--line);}
+  .compare-card.light .cc-name{color:var(--forest-3);}
+  .compare-card.light .cc-row{border-top-color:var(--line);}
+  .compare-card.light .cc-row .cc-label{color:var(--ink-faint);}
+  .compare-card.light .cc-row .cc-value{color:var(--forest-3);}
+  .compare-card.light .cc-highlight{color:var(--ink-soft);}
+  .compare-card.light .cc-cta{color:var(--forest-2);border-color:var(--line);}
+  .status.is-mixed{color:var(--terracotta);}
+  .status.is-mixed .pip{background:var(--terracotta);box-shadow:0 0 6px rgba(176,96,63,0.7);}
+
+  /* ===== TÌM CĂN PHÙ HỢP — QUIZ FOUNDATION ===== */
+  .quiz-section{background:var(--paper-deep);}
+  .quiz-section .head{margin-bottom:34px;}
+  #quizStartBtn{margin-bottom:8px;}
+  .quiz-form{max-width:760px;margin-top:38px;display:flex;flex-direction:column;gap:36px;}
+  .quiz-q{}
+  .quiz-q .qq-label{font-family:var(--font-accent);font-size:19px;color:var(--forest-3);margin-bottom:16px;}
+  .quiz-options{display:flex;flex-wrap:wrap;gap:10px;}
+  .quiz-option{position:relative;}
+  .quiz-option input{position:absolute;opacity:0;width:1px;height:1px;}
+  .quiz-option label{
+    display:inline-flex;align-items:center;padding:11px 18px;font-size:13.5px;color:var(--ink-soft);
+    background:var(--paper);border:1px solid var(--line);border-radius:2px;cursor:pointer;
+    transition:background .25s ease,border-color .25s ease,color .25s ease;
+  }
+  .quiz-option input:checked + label{background:var(--forest);border-color:var(--forest);color:var(--paper);}
+  .quiz-option input:focus-visible + label{outline:2px solid var(--bronze);outline-offset:2px;}
+  .quiz-actions{display:flex;align-items:center;gap:18px;margin-top:6px;}
+  .quiz-hint{font-size:12.5px;color:var(--ink-faint);}
+  .quiz-results{margin-top:44px;}
+  .quiz-result-lead{font-family:var(--font-accent);font-style:italic;font-size:22px;color:var(--forest-2);max-width:600px;margin-bottom:28px;line-height:1.5;}
+
+  /* ===== LEAD FORM — TỐI GIẢN ===== */
+  .lead-form-block{margin-top:64px;padding-top:52px;border-top:1px solid var(--line);}
+  .lead-form-block h3{font-size:clamp(22px,2.6vw,28px);color:var(--forest-3);margin-bottom:10px;}
+  .lead-form-block > p{color:var(--ink-soft);font-size:15px;max-width:480px;margin-bottom:28px;}
+  .lead-form{max-width:560px;display:flex;flex-direction:column;gap:18px;}
+  .lf-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media(max-width:520px){.lf-row{grid-template-columns:1fr;}}
+  .lf-field label{display:block;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;font-family:var(--font-nav);font-weight:600;}
+  .lf-field input, .lf-field select{
+    width:100%;padding:12px 14px;font-size:15px;font-family:var(--font-body);color:var(--ink);
+    background:var(--paper);border:1px solid var(--line);border-radius:2px;transition:border-color .2s ease;
+  }
+  .lf-field input:focus, .lf-field select:focus{outline:none;border-color:var(--bronze);}
+  .lf-field input:invalid:not(:placeholder-shown){border-color:var(--terracotta);}
+  .lf-submit{margin-top:6px;}
+  .lf-submit button{
+    font-family:var(--font-nav);background:var(--forest);color:var(--paper);border:none;cursor:pointer;
+    padding:15px 30px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+    border-radius:2px;transition:background .3s ease,opacity .3s ease;display:inline-flex;align-items:center;gap:10px;
+  }
+  .lf-submit button:hover{background:var(--forest-3);}
+  .lf-submit button:disabled{opacity:.6;cursor:default;}
+  .lf-state{margin-top:16px;font-size:14.5px;line-height:1.6;padding:14px 16px;border-radius:2px;display:none;}
+  .lf-state.is-visible{display:block;}
+  .lf-state.success{background:rgba(75,130,90,0.1);color:var(--forest-2);border:1px solid rgba(75,130,90,0.25);}
+  .lf-state.error{background:rgba(176,96,63,0.1);color:var(--terracotta);border:1px solid rgba(176,96,63,0.25);}
 </style>
 </head>
 <body class="locked">
@@ -750,6 +825,7 @@
           <a class="nav-mega-item" role="menuitem" href="05_Content/the-view.html"><span class="nav-mega-num">06</span><span class="nav-mega-dash">—</span><span class="nav-mega-name">THE VIEW</span></a>
         </div>
       </div>
+      <a href="#tim-can-phu-hop">Tìm căn phù hợp</a>
       <a href="#ch05">Góc nhìn</a>
       <a href="#ch06">Liên hệ</a>
       <a class="nav-link-phone" href="tel:+84918602249">📞 0918 602 249</a>
@@ -1076,6 +1152,74 @@
 
     </div>
     <p class="route-note">Thông tin tổng hợp và diễn giải lại từ trang chính thức tokyugardencity.com cùng các trang dự án. Vui lòng liên hệ trực tiếp để nhận thông tin pháp lý, tiến độ và bảng giá cập nhật mới nhất từ chủ đầu tư.</p>
+
+    <div class="compare-intro reveal">
+      <h3>6 dự án. Một lựa chọn phù hợp với bạn.</h3>
+      <p>So sánh nhanh trước khi mở từng trang dự án. Ô nào chưa có số liệu xác nhận từ chủ đầu tư sẽ ghi rõ "Đang cập nhật" — Như không đoán số để đưa cho bạn.</p>
+    </div>
+    <div class="compare-grid reveal" id="compareGrid" aria-label="Bảng so sánh 6 dự án"></div>
+  </div>
+</section>
+
+<!-- ===================== TÌM CĂN PHÙ HỢP — QUIZ FOUNDATION ===================== -->
+<section class="section quiz-section" id="tim-can-phu-hop">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="kicker"><span class="dash"></span> Tìm căn phù hợp</div>
+      <h2>Bạn đang tìm một nơi để sống,<br>hay một nơi để đầu tư?</h2>
+      <p>Chỉ vài câu hỏi, Như sẽ giúp bạn thu hẹp những lựa chọn phù hợp — không cần đọc hết cả 6 trang dự án.</p>
+    </div>
+    <a class="btn-dark" href="#" id="quizStartBtn">Bắt đầu tìm →</a>
+
+    <form class="quiz-form reveal" id="quizForm" hidden>
+      <div class="quiz-q">
+        <div class="qq-label">01 · Bạn mua để làm gì?</div>
+        <div class="quiz-options" role="radiogroup" aria-label="Mục đích mua">
+          <div class="quiz-option"><input type="radio" name="purpose" id="p-an-cu" value="an-cu" required><label for="p-an-cu">Ở</label></div>
+          <div class="quiz-option"><input type="radio" name="purpose" id="p-dau-tu" value="dau-tu"><label for="p-dau-tu">Đầu tư</label></div>
+          <div class="quiz-option"><input type="radio" name="purpose" id="p-vua" value="vua"><label for="p-vua">Vừa ở vừa đầu tư</label></div>
+          <div class="quiz-option"><input type="radio" name="purpose" id="p-tim-hieu" value="tim-hieu"><label for="p-tim-hieu">Đang tìm hiểu</label></div>
+        </div>
+      </div>
+      <div class="quiz-q">
+        <div class="qq-label">02 · Khoảng ngân sách của bạn?</div>
+        <div class="quiz-options" role="radiogroup" aria-label="Khoảng ngân sách">
+          <div class="quiz-option"><input type="radio" name="budget" id="b-1" value="duoi-2ty" required><label for="b-1">Dưới 2 tỷ</label></div>
+          <div class="quiz-option"><input type="radio" name="budget" id="b-2" value="2-3.5ty"><label for="b-2">2 – 3,5 tỷ</label></div>
+          <div class="quiz-option"><input type="radio" name="budget" id="b-3" value="3.5-5ty"><label for="b-3">3,5 – 5 tỷ</label></div>
+          <div class="quiz-option"><input type="radio" name="budget" id="b-4" value="tren-5ty"><label for="b-4">Trên 5 tỷ</label></div>
+          <div class="quiz-option"><input type="radio" name="budget" id="b-5" value="chua-xac-dinh"><label for="b-5">Chưa xác định</label></div>
+        </div>
+      </div>
+      <div class="quiz-q">
+        <div class="qq-label">03 · Bạn đang tìm loại căn nào?</div>
+        <div class="quiz-options" role="radiogroup" aria-label="Loại căn">
+          <div class="quiz-option"><input type="radio" name="bedroom" id="r-1pn" value="1pn" required><label for="r-1pn">1 phòng ngủ</label></div>
+          <div class="quiz-option"><input type="radio" name="bedroom" id="r-2pn" value="2pn"><label for="r-2pn">2 phòng ngủ</label></div>
+          <div class="quiz-option"><input type="radio" name="bedroom" id="r-3pn" value="3pn"><label for="r-3pn">3 phòng ngủ</label></div>
+          <div class="quiz-option"><input type="radio" name="bedroom" id="r-duplex" value="duplex"><label for="r-duplex">Duplex / căn đặc biệt</label></div>
+          <div class="quiz-option"><input type="radio" name="bedroom" id="r-chua-xd" value=""><label for="r-chua-xd">Chưa xác định</label></div>
+        </div>
+      </div>
+      <div class="quiz-q">
+        <div class="qq-label">04 · Bạn dự kiến mua khi nào?</div>
+        <div class="quiz-options" role="radiogroup" aria-label="Thời điểm dự kiến mua">
+          <div class="quiz-option"><input type="radio" name="timeline" id="t-1" value="3-thang" required><label for="t-1">Trong 3 tháng</label></div>
+          <div class="quiz-option"><input type="radio" name="timeline" id="t-2" value="3-6-thang"><label for="t-2">3–6 tháng</label></div>
+          <div class="quiz-option"><input type="radio" name="timeline" id="t-3" value="6-12-thang"><label for="t-3">6–12 tháng</label></div>
+          <div class="quiz-option"><input type="radio" name="timeline" id="t-4" value="chua-xac-dinh"><label for="t-4">Chưa xác định</label></div>
+        </div>
+      </div>
+      <div class="quiz-actions">
+        <button class="btn-dark" type="submit">Xem gợi ý →</button>
+        <span class="quiz-hint">Không cần chính xác tuyệt đối — đây chỉ là gợi ý ban đầu.</span>
+      </div>
+    </form>
+
+    <div class="quiz-results" id="quizResults" hidden>
+      <p class="quiz-result-lead">"Như đã hiểu sơ bộ nhu cầu của bạn. Bạn có thể xem những dự án phù hợp nhất bên dưới."</p>
+      <div class="compare-grid" id="quizResultGrid" aria-label="Dự án gợi ý"></div>
+    </div>
   </div>
 </section>
 
@@ -1167,10 +1311,50 @@
         </g>
       </svg>
       <div class="row"><span class="ic">☎</span><div><div class="t">Điện thoại / Zalo</div><div class="v">+84 91 860 22 49</div></div></div>
+      <div class="row"><span class="ic">✉</span><div><div class="t">Email</div><div class="v"><a href="mailto:ngo.to.nhu@becamex-tokyu.com">ngo.to.nhu@becamex-tokyu.com</a></div></div></div>
       <div class="row"><span class="ic">◈</span><div><div class="t">Lĩnh vực</div><div class="v">Bất động sản</div></div></div>
       <div class="row"><span class="ic">⌂</span><div><div class="t">Khu vực</div><div class="v">Bình Dương</div></div></div>
       <div class="row"><span class="ic">f</span><div><div class="t">Facebook</div><div class="v"><a href="https://www.facebook.com/profile.php?id=100034539233437" target="_blank" rel="noopener">Becamex Tokyu — Tố Như</a></div></div></div>
     </div>
+  </div>
+
+  <div class="wrap lead-form-block reveal">
+    <h3>Để Như hiểu nhu cầu của bạn<br>trước khi gửi thông tin.</h3>
+    <p>Điền vài dòng bên dưới — Như sẽ xem qua trước khi phản hồi, thay vì gửi hàng loạt tài liệu chung chung.</p>
+    <form class="lead-form" id="leadForm" novalidate>
+      <div class="lf-row">
+        <div class="lf-field">
+          <label for="lf-name">Họ và tên</label>
+          <input type="text" id="lf-name" name="name" required autocomplete="name">
+        </div>
+        <div class="lf-field">
+          <label for="lf-phone">Số điện thoại</label>
+          <input type="tel" id="lf-phone" name="phone" required autocomplete="tel" pattern="[0-9+ ]{8,15}">
+        </div>
+      </div>
+      <div class="lf-row">
+        <div class="lf-field">
+          <label for="lf-project">Bạn đang quan tâm dự án nào?</label>
+          <select id="lf-project" name="project">
+            <option value="Chưa xác định">Chưa xác định</option>
+          </select>
+        </div>
+        <div class="lf-field">
+          <label for="lf-goal">Mục đích</label>
+          <select id="lf-goal" name="goal">
+            <option value="An cư">An cư</option>
+            <option value="Đầu tư">Đầu tư</option>
+            <option value="Vừa ở vừa đầu tư">Vừa ở vừa đầu tư</option>
+            <option value="Đang tìm hiểu">Đang tìm hiểu</option>
+          </select>
+        </div>
+      </div>
+      <div class="lf-submit">
+        <button type="submit" id="lfSubmitBtn">Gửi cho Như</button>
+      </div>
+      <div class="lf-state success" id="lfSuccess" role="status">Như đã nhận được thông tin của bạn.<br>Như sẽ xem nhu cầu trước và gửi lại những lựa chọn phù hợp.</div>
+      <div class="lf-state error" id="lfError" role="alert">Có một chút trục trặc. Bạn thử lại giúp Như nhé.</div>
+    </form>
   </div>
 </section>
 
@@ -1283,6 +1467,9 @@
   });
 </script>
 
+<script src="assets/projects-data.js"></script>
+<script src="assets/homepage.js"></script>
+<script src="assets/sticky-bar.js"></script>
 </body>
 </html>
 

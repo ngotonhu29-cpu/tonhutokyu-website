@@ -7,6 +7,7 @@
 <meta name="description" content="The TEN — 300 căn hộ cao cấp trong quần thể MIDORI PARK, Onsen chuẩn Nhật đầu tiên tại khu vực. A New Dawn of Living. Tư vấn trực tiếp cùng Tố Như.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/sticky-bar.css">
+<link rel="stylesheet" href="../assets/unit-finder.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -201,6 +202,7 @@
       <a href="#kien-truc">Kiến trúc</a>
       <a href="#tien-ich">Tiện ích</a>
       <a href="#san-pham">Sản phẩm</a>
+      <a href="#can-dang-co-san">Căn đang có sẵn</a>
       <a href="#thu-vien-anh">Thư viện ảnh</a>
       <a href="#vi-tri">Vị trí</a>
     </nav>
@@ -347,6 +349,48 @@
     <div class="note-box on-dark" style="max-width:100%;">
       <strong style="color:var(--paper);">Thông tin đang được xác minh.</strong> Phân loại chi tiết theo số phòng ngủ và diện tích từng loại căn (bao gồm căn Duplex và mặt bằng tầng) của The TEN hiện chưa có dữ liệu chính thức tách riêng — con số 44–161 m² là biên độ diện tích chung toàn dự án, hình ảnh trên là phối cảnh căn hộ mẫu tham khảo. Liên hệ trực tiếp để được cập nhật thông tin chính xác nhất.
     </div>
+  </div>
+</section>
+
+<!-- ===================== CĂN ĐANG CÓ SẴN — GIỎ HÀNG THỰC TẾ THE TEN ===================== -->
+<section class="section uf-section" id="can-dang-co-san" data-tn-unit-finder data-tn-default-project="the-ten">
+  <div class="wrap">
+    <div class="uf-head reveal">
+      <div class="kicker"><span class="dash"></span> Căn đang có sẵn</div>
+      <h2>Nhập nhu cầu,<br>xem ngay những căn The TEN đang có thể mua</h2>
+      <p>Đối chiếu trực tiếp với giỏ hàng hiện tại của The TEN — chỉ những căn còn trong giỏ hàng và có giá công bố mới xuất hiện ở đây.</p>
+    </div>
+    <form class="uf-form reveal" data-uf-form>
+      <div class="uf-row">
+        <div class="uf-field" data-uf-project-field>
+          <label>Dự án</label>
+          <div class="uf-chip-group" data-uf-project></div>
+        </div>
+        <div class="uf-field">
+          <label>Số phòng ngủ</label>
+          <div class="uf-chip-group" data-uf-bedroom></div>
+        </div>
+        <div class="uf-field">
+          <label>Ngân sách tối đa</label>
+          <div class="uf-chip-group" data-uf-budget>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="5">Dưới 5 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="8">Dưới 8 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="11">Dưới 11 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="">Không giới hạn</button>
+          </div>
+          <div class="uf-budget-custom">
+            <label for="ufBudgetInputTen">hoặc nhập chính xác</label>
+            <input type="number" id="ufBudgetInputTen" data-uf-budget-input min="0" step="0.1" placeholder="VD: 8.5">
+            <span class="unit">tỷ đồng</span>
+          </div>
+        </div>
+      </div>
+      <div class="uf-actions">
+        <button type="submit">Tìm căn phù hợp →</button>
+        <span class="uf-hint">Không chọn tiêu chí nào cũng xem được — Như sẽ hiện toàn bộ căn The TEN đang có sẵn.</span>
+      </div>
+    </form>
+    <div class="uf-results reveal in" data-uf-results></div>
   </div>
 </section>
 
@@ -498,6 +542,9 @@
   });
 </script>
 
+<script src="../assets/units-data.js"></script>
+<script src="../assets/nest-layout-manifest.js"></script>
+<script src="../assets/unit-finder.js"></script>
 <script src="../assets/sticky-bar.js"></script>
 </body>
 </html>

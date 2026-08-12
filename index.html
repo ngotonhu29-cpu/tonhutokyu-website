@@ -7,6 +7,7 @@
 <meta name="description" content="Tố Như — chuyên viên tư vấn trực tiếp từ Becamex Tokyu, sống tại Thành phố Mới Bình Dương từ năm 2018. Không chỉ giúp bạn chọn một căn hộ, mà giúp bạn hiểu nơi mình sắp sống.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/sticky-bar.css">
+<link rel="stylesheet" href="assets/unit-finder.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -826,6 +827,7 @@
         </div>
       </div>
       <a href="#tim-can-phu-hop">Tìm căn phù hợp</a>
+      <a href="#can-dang-co-san">Căn đang có sẵn</a>
       <a href="#ch05">Góc nhìn</a>
       <a href="#ch06">Liên hệ</a>
       <a class="nav-link-phone" href="tel:+84918602249">📞 0918 602 249</a>
@@ -1223,6 +1225,49 @@
   </div>
 </section>
 
+<!-- ===================== CĂN ĐANG CÓ SẴN — GIỎ HÀNG THỰC TẾ THE TEN & THE NEST ===================== -->
+<section class="section uf-section" id="can-dang-co-san" data-tn-unit-finder>
+  <div class="wrap">
+    <div class="uf-head reveal">
+      <div class="kicker"><span class="dash"></span> Căn đang có sẵn</div>
+      <h2>Nhập nhu cầu,<br>xem ngay những căn đang có thể mua</h2>
+      <p>Đối chiếu trực tiếp với giỏ hàng hiện tại của The NEST và The TEN — chỉ những căn còn trong giỏ hàng và có giá công bố mới xuất hiện ở đây, không phỏng đoán, không "liên hệ nhận giá".</p>
+    </div>
+    <form class="uf-form reveal" data-uf-form>
+      <div class="uf-row">
+        <div class="uf-field" data-uf-project-field>
+          <label>Dự án</label>
+          <div class="uf-chip-group" data-uf-project></div>
+        </div>
+        <div class="uf-field">
+          <label>Số phòng ngủ</label>
+          <div class="uf-chip-group" data-uf-bedroom></div>
+        </div>
+        <div class="uf-field">
+          <label>Ngân sách tối đa</label>
+          <div class="uf-chip-group" data-uf-budget>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="3">Dưới 3 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="4">Dưới 4 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="5">Dưới 5 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="7">Dưới 7 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="">Không giới hạn</button>
+          </div>
+          <div class="uf-budget-custom">
+            <label for="ufBudgetInput">hoặc nhập chính xác</label>
+            <input type="number" id="ufBudgetInput" data-uf-budget-input min="0" step="0.1" placeholder="VD: 4.5">
+            <span class="unit">tỷ đồng</span>
+          </div>
+        </div>
+      </div>
+      <div class="uf-actions">
+        <button type="submit">Tìm căn phù hợp →</button>
+        <span class="uf-hint">Không chọn tiêu chí nào cũng xem được — Như sẽ hiện toàn bộ căn đang có sẵn.</span>
+      </div>
+    </form>
+    <div class="uf-results reveal in" data-uf-results></div>
+  </div>
+</section>
+
 <!-- ===================== CHAPTER 05 — REAL ESTATE INSIGHTS ===================== -->
 <section class="section tight" id="ch05">
   <div class="wrap">
@@ -1469,6 +1514,9 @@
 
 <script src="assets/projects-data.js"></script>
 <script src="assets/homepage.js"></script>
+<script src="assets/units-data.js"></script>
+<script src="assets/nest-layout-manifest.js"></script>
+<script src="assets/unit-finder.js"></script>
 <script src="assets/sticky-bar.js"></script>
 </body>
 </html>

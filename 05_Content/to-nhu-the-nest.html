@@ -7,6 +7,7 @@
 <meta name="description" content="The NEST — 972 căn hộ, 2 tòa EAST/WEST, ngay trung tâm TOD Phường Bình Dương. Câu chuyện, không gian sống, kiến trúc và tiện ích — cùng góc nhìn tư vấn cá nhân của Tố Như.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/sticky-bar.css">
+<link rel="stylesheet" href="../assets/unit-finder.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -196,6 +197,7 @@
       <a href="#khong-gian-song">Không gian sống</a>
       <a href="#tien-ich">Tiện ích</a>
       <a href="#can-ho">Căn hộ</a>
+      <a href="#can-dang-co-san">Căn đang có sẵn</a>
       <a href="#vi-tri">Vị trí</a>
     </nav>
     <a class="nav-cta" href="tel:+84918602249">📞 0918 602 249</a>
@@ -409,6 +411,49 @@
   </div>
 </section>
 
+<!-- ===================== CĂN ĐANG CÓ SẴN — GIỎ HÀNG THỰC TẾ THE NEST ===================== -->
+<section class="section uf-section" id="can-dang-co-san" data-tn-unit-finder data-tn-default-project="the-nest">
+  <div class="wrap">
+    <div class="uf-head reveal">
+      <div class="kicker"><span class="dash"></span> Căn đang có sẵn</div>
+      <h2>Nhập nhu cầu,<br>xem ngay những căn The NEST đang có thể mua</h2>
+      <p>Đối chiếu trực tiếp với giỏ hàng hiện tại của The NEST (tòa EAST &amp; WEST) — chỉ những căn còn trong giỏ hàng và có giá công bố mới xuất hiện ở đây, không phỏng đoán, không "liên hệ nhận giá".</p>
+    </div>
+    <form class="uf-form reveal" data-uf-form>
+      <div class="uf-row">
+        <div class="uf-field" data-uf-project-field>
+          <label>Dự án</label>
+          <div class="uf-chip-group" data-uf-project></div>
+        </div>
+        <div class="uf-field">
+          <label>Số phòng ngủ</label>
+          <div class="uf-chip-group" data-uf-bedroom></div>
+        </div>
+        <div class="uf-field">
+          <label>Ngân sách tối đa</label>
+          <div class="uf-chip-group" data-uf-budget>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="2">Dưới 2 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="3">Dưới 3 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="4">Dưới 4 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="6">Dưới 6 tỷ</button>
+            <button type="button" class="uf-chip" data-uf-budget-chip data-value="">Không giới hạn</button>
+          </div>
+          <div class="uf-budget-custom">
+            <label for="ufBudgetInputNest">hoặc nhập chính xác</label>
+            <input type="number" id="ufBudgetInputNest" data-uf-budget-input min="0" step="0.1" placeholder="VD: 3.2">
+            <span class="unit">tỷ đồng</span>
+          </div>
+        </div>
+      </div>
+      <div class="uf-actions">
+        <button type="submit">Tìm căn phù hợp →</button>
+        <span class="uf-hint">Không chọn tiêu chí nào cũng xem được — Như sẽ hiện toàn bộ căn The NEST đang có sẵn.</span>
+      </div>
+    </form>
+    <div class="uf-results reveal in" data-uf-results></div>
+  </div>
+</section>
+
 <!-- VII — VỊ TRÍ & KẾT NỐI -->
 <section class="section on-forest" id="vi-tri">
   <div class="wrap">
@@ -483,6 +528,9 @@
   });
 </script>
 
+<script src="../assets/units-data.js"></script>
+<script src="../assets/nest-layout-manifest.js"></script>
+<script src="../assets/unit-finder.js"></script>
 <script src="../assets/sticky-bar.js"></script>
 </body>
 </html>

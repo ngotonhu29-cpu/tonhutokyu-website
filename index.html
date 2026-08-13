@@ -663,9 +663,9 @@
   .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:12.5px;}
   .footer-inner .fmark{color:var(--bronze-light);font-family:var(--font-accent);font-size:16px;}
 
-  /* reveal */
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
+  /* reveal (disabled: content shows immediately, no scroll-in animation) */
+  .reveal{opacity:1;transform:none;}
+  .reveal.in{opacity:1;transform:none;}
 
   /* ===== TYPOGRAPHY REFINEMENT — LUXURY EDITORIAL SYSTEM ===== */
   .head .kicker, .eyebrow{font-family:var(--font-nav);letter-spacing:0.26em;font-weight:600;}

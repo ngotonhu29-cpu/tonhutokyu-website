@@ -124,7 +124,7 @@
     display:flex;align-items:center;justify-content:space-between;
     padding:16px 32px;max-width:1180px;margin:0 auto;
   }
-  .brandmark{display:flex;align-items:center;gap:12px;}
+  .brandmark{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer;}
   .brandmark .ring{
     width:38px;height:38px;border-radius:50%;
     border:1px solid var(--bronze-light);
@@ -803,13 +803,13 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="brandmark">
+    <a class="brandmark" href="/" aria-label="Về trang chủ Tố Như">
       <div class="ring">TN</div>
       <div class="txt">
         <strong>Tố Như</strong>
         <span>Becamex Tokyu</span>
       </div>
-    </div>
+    </a>
     <nav class="links" id="navLinks">
       <a href="#ch01">Giới thiệu</a>
       <a href="#ch02">Bình Dương</a>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}if(!location.hash){window.scrollTo(0,0);}</script>
+<script>(function(){if('scrollRestoration' in history){history.scrollRestoration='manual';}var fromSameSite=document.referrer.indexOf(location.origin)===0;var shouldReset=!location.hash||!fromSameSite;if(shouldReset&&location.hash&&history.replaceState){history.replaceState(null,'',location.pathname+location.search);}if(shouldReset){window.scrollTo(0,0);window.addEventListener('load',function(){window.scrollTo(0,0);setTimeout(function(){window.scrollTo(0,0);},50);});}})();</script>
 <title>Tố Như | Becamex Tokyu — A Life in the New City</title>
 <meta name="description" content="Tố Như — chuyên viên tư vấn trực tiếp từ Becamex Tokyu, sống tại Thành phố Mới Bình Dương từ năm 2018. Không chỉ giúp bạn chọn một căn hộ, mà giúp bạn hiểu nơi mình sắp sống.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
